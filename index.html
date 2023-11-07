@@ -45,11 +45,21 @@
 	var playButton = document.getElementById("playButton");
 	justinapoleon.style.display = 'none';
 	
+	function changeBGColor(){
+		const colors = ["#f1fe36", "#fd6eff", "#6effff", "#8802e7"];
+		let i = 0;
+		
+		setInterval(function() {
+			document.body.style.backgroundColor = colors[i];
+			i = (i + 1) % colors.length;
+		}, 2000);
+	}
+	
 	function playMusic(){
 		justinapoleon.style.display = 'block';
 		player.play();
 		playButton.remove();
-		document.body.style.backgroundColor = "#f1fe36";
+		changeBGColor();
 	}
 	
 </script>
